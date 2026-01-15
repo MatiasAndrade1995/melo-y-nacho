@@ -292,7 +292,6 @@ body::before {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
     background: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.6) 0%,
@@ -303,13 +302,8 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-radius: 25px 25px 0 0;
-    pointer-events: none;
-}
-
-.foto-principal-overlay > * {
-    pointer-events: auto;
 }
 
 .nos-casamos {
@@ -346,7 +340,11 @@ body::before {
     background: transparent;
     border: none;
     padding: 0;
-    margin-bottom: 50px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
 }
 
 .play-button::before {
