@@ -1349,7 +1349,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     }
 
     .names::before {
-        top: -60px;
+        top: -30px;
         font-size: 1.3rem;
     }
 
