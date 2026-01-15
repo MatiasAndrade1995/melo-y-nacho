@@ -1254,17 +1254,28 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     }
 
     .play-button {
-        animation: pulseGlow 2s ease-in-out 2.5s infinite;
+        animation: pulseGlowMobile 2.5s ease-in-out 2.5s infinite;
     }
 
     .play-button::before {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
 
     .play-button svg {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
+    }
+
+    @keyframes pulseGlowMobile {
+        0%, 100% {
+            transform: scale(1);
+            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+        }
+        50% {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+        }
     }
 
     .hero-section {
@@ -1349,9 +1360,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
     .section-tag {
         left: -10px;
-        top: 30px;
-        font-size: 0.9rem;
-        padding: 8px 20px 8px 15px;
+        top: 20px;
+        font-size: 0.8rem;
+        padding: 6px 18px 6px 12px;
         letter-spacing: 1px;
     }
 
@@ -1404,27 +1415,100 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     }
 
     /* Donde Section Mobile */
+    .donde-section {
+        position: relative;
+        padding: 60px 20px 50px;
+        overflow: visible;
+    }
 
-    .section-title {
+    .donde-content {
+        text-align: center;
+    }
+
+    .donde-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 7.5vw, 3.8rem);
+        color: var(--color-text);
+        margin-bottom: 1.5rem;
+        letter-spacing: 4px;
+        position: relative;
+        padding-bottom: 1.5rem;
+    }
+
+    .donde-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--color-text), transparent);
+    }
+
+    .donde-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .donde-time {
+        font-family: var(--font-secondary);
         font-size: clamp(2rem, 7vw, 3rem);
+        color: var(--color-gris-oscuro);
+        font-weight: 900;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
     }
 
-    .section-subtitle {
-        font-size: clamp(1rem, 3.5vw, 1.2rem);
-        margin-bottom: 15px;
+    .donde-venue {
+        font-family: var(--font-body);
+        font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+        color: var(--color-text);
+        font-weight: 600;
+        margin-bottom: 0.3rem;
     }
 
-    .section-text {
-        font-size: clamp(0.9rem, 3vw, 1.05rem);
+    .donde-address {
+        font-family: var(--font-body);
+        font-size: clamp(0.95rem, 3vw, 1.1rem);
+        color: var(--color-gris-medio);
+        font-style: italic;
+        margin-bottom: 1.5rem;
     }
 
-    .info-card {
-        padding: 25px 15px;
+    .btn-map {
+        font-family: var(--font-body);
+        background: var(--color-azul-gris);
+        color: white;
+        padding: 10px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: clamp(0.85rem, 2.8vw, 0.95rem);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
     }
 
-    .btn {
-        padding: 12px 25px;
-        font-size: 0.95rem;
+    .btn-map:hover {
+        background: var(--color-azul-oscuro);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(86, 119, 130, 0.4);
+    }
+
+    .donde-note {
+        font-family: var(--font-body);
+        font-size: clamp(0.85rem, 2.8vw, 1rem);
+        color: var(--color-gris-medio);
+        font-style: italic;
+        line-height: 1.6;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     /* Dresscode Section Mobile */
@@ -1485,12 +1569,35 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
     /* Footer Mobile */
     .footer {
-        padding: 25px 15px;
-        font-size: 0.9rem;
+        padding: 30px 20px;
+    }
+
+    .footer-names {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+    }
+
+    .footer-date {
+        font-family: var(--font-body);
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        margin-bottom: 1rem;
+        opacity: 0.9;
     }
 
     .attribution {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+        opacity: 1;
+        line-height: 1.6;
+        margin-top: 1rem;
+    }
+
+    .attribution a {
+        color: white;
+        text-decoration: underline;
+        opacity: 1;
+        font-weight: 500;
     }
 }
 
