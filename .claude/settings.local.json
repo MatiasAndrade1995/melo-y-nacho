@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(powershell -command:*)",
+      "Bash(dir:*)",
+      "Bash(copy:*)",
+      "Bash(del \"c:\\\\Users\\\\Matias\\\\Desktop\\\\casamiento\\\\temp_demo1.html\" \"c:\\\\Users\\\\Matias\\\\Desktop\\\\casamiento\\\\temp_demo2.html\")",
+      "Bash(echo:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
