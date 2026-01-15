@@ -253,11 +253,18 @@ body::before {
     position: relative;
     width: 100%;
     max-width: 1400px;
-    margin: 40px auto 40px;
+    margin: 40px auto 60px;
     padding: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
     border-radius: 0 !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.foto-principal-wrapper {
+    position: relative;
+    width: 100%;
 }
 
 .foto-principal {
@@ -270,6 +277,7 @@ body::before {
         0 15px 50px rgba(0, 0, 0, 0.12),
         0 5px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .foto-principal:hover {
@@ -281,22 +289,21 @@ body::before {
 
 .foto-principal-overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 0, 0, 0.45) 40%,
-        rgba(0, 0, 0, 0.2) 70%,
-        transparent 100%
+        to bottom,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.3) 30%,
+        transparent 60%
     );
-    padding: 100px 40px 50px;
+    padding: 40px 40px 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    border-radius: 0 0 25px 25px;
+    justify-content: flex-start;
+    border-radius: 25px 25px 0 0;
 }
 
 .nos-casamos {
@@ -333,7 +340,11 @@ body::before {
     background: transparent;
     border: none;
     padding: 0;
-    position: relative;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
 }
 
 .play-button::before {
@@ -1145,16 +1156,18 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     }
 
     .music-player {
-        top: 8px;
+        position: absolute;
+        top: 10px;
         left: 50%;
         transform: translateX(-50%);
         right: auto;
         width: auto;
-        max-width: 90%;
-        background: rgba(42, 42, 42, 0.4);
-        padding: 6px 10px;
-        backdrop-filter: blur(6px);
-        border-radius: 20px;
+        max-width: 85%;
+        background: rgba(42, 42, 42, 0.6);
+        padding: 5px 8px;
+        backdrop-filter: blur(8px);
+        border-radius: 18px;
+        z-index: 100;
     }
 
     .audio-controls {
@@ -1171,13 +1184,13 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     }
 
     .audio-play-pause {
-        width: 26px;
-        height: 26px;
+        width: 24px;
+        height: 24px;
     }
 
     .audio-play-pause svg {
-        width: 11px;
-        height: 11px;
+        width: 10px;
+        height: 10px;
     }
 
     .audio-info {
@@ -1187,12 +1200,12 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     }
 
     .audio-title {
-        font-size: 10px;
+        font-size: 9px;
         margin-bottom: 0;
     }
 
     .audio-time {
-        font-size: 9px;
+        font-size: 8px;
     }
 
     .volume-btn {
@@ -1212,8 +1225,8 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     .foto-principal-section {
         margin-left: auto !important;
         margin-right: auto !important;
-        margin-top: 15px;
-        margin-bottom: 25px;
+        margin-top: 20px;
+        margin-bottom: 40px;
         padding: 0 !important;
         max-width: 85%;
         width: 85%;
@@ -1221,50 +1234,85 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
         box-shadow: none !important;
         border-radius: 0 !important;
         display: block;
+        position: relative;
+    }
+
+    .foto-principal-wrapper {
+        position: relative;
+        width: 100%;
     }
 
     .foto-principal {
-        border-radius: 12px;
-        max-height: 220px;
+        border-radius: 15px;
+        aspect-ratio: 3/4;
         object-fit: cover;
         width: 100%;
         margin: 0 auto;
         display: block;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        position: relative;
     }
 
     .foto-principal-overlay {
-        padding: 25px 15px 18px;
-        border-radius: 0 0 12px 12px;
+        position: relative;
+        width: 100%;
+        padding: 0;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -70px;
+        z-index: 10;
+        margin-bottom: 10px;
     }
 
     .decorative-heart-main {
-        bottom: 15px;
-        right: 15px;
+        position: absolute;
+        bottom: -25px;
+        right: 10px;
+        z-index: 10;
     }
 
     .decorative-heart-main img {
-        width: 50px;
-        height: 50px;
+        width: 65px;
+        height: 65px;
+        opacity: 1;
     }
 
     .nos-casamos {
-        margin-bottom: 20px;
+        position: absolute;
+        top: 35px;
+        left: 0;
+        right: 0;
+        margin: 0;
         letter-spacing: 3px;
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(2.2rem, 9vw, 3.2rem);
+        color: white;
+        text-shadow:
+            2px 4px 12px rgba(0, 0, 0, 0.6),
+            0 2px 4px rgba(0, 0, 0, 0.4);
+        z-index: 10;
+        text-align: center;
+        padding: 0 10px;
     }
 
     .play-button {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
         animation: pulseGlowMobile 2.5s ease-in-out 2.5s infinite;
+        margin-top: 15px;
     }
 
     .play-button::before {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
 
     .play-button svg {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
 
     @keyframes pulseGlowMobile {
