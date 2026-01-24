@@ -215,7 +215,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Add fade-in class to sections
 document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section:not(.hero-section)');
+    const sections = document.querySelectorAll('section:not(.hero-section):not(.foto-principal-section)');
     sections.forEach(section => {
         section.classList.add('fade-in');
         observer.observe(section);
