@@ -49,7 +49,7 @@
 
     /* Tipografías */
     --font-heading: 'High Spirited', cursive;
-    --font-body: 'Assistant', 'Montserrat', 'Arial', sans-serif;
+    --font-body: 'IM Black', 'Georgia', serif;
     --font-secondary: 'IM Black', 'Georgia', serif;
 }
 
@@ -79,10 +79,10 @@ body::after {
     right: 0;
     bottom: 0;
     background-image: url('fondo-hojas.jpg');
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     z-index: -2;
     opacity: 0.5;
 }
@@ -454,7 +454,7 @@ body::before {
 .names {
     font-family: var(--font-heading);
     color: var(--color-beige);
-    font-size: clamp(3.5rem, 8vw + 1rem, 9rem);
+    font-size: clamp(5rem, 12vw + 1rem, 12rem);
     margin-bottom: 1rem;
     letter-spacing: 0;
     text-shadow: none;
@@ -468,6 +468,8 @@ body::before {
 .hero-star-top img {
     filter: brightness(0) saturate(100%) invert(67%) sepia(18%) saturate(775%) hue-rotate(8deg) brightness(94%) contrast(87%);
     opacity: 0.8;
+    width: 50px;
+    height: 50px;
 }
 
 .hero-star-bottom {
@@ -478,6 +480,8 @@ body::before {
 .hero-star-bottom img {
     filter: brightness(0) saturate(100%) invert(67%) sepia(18%) saturate(775%) hue-rotate(8deg) brightness(94%) contrast(87%);
     opacity: 0.8;
+    width: 50px;
+    height: 50px;
 }
 
 .hero-text {
@@ -485,12 +489,13 @@ body::before {
     font-size: 2.2rem;
     margin-bottom: 2rem;
     animation: fadeInUp 1s ease-out 0.3s both;
-    font-weight: 300;
+    font-weight: 900;
     line-height: 1.9;
     font-style: italic;
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
+    color: var(--color-beige);
 }
 
 /* Countdown */
@@ -500,7 +505,8 @@ body::before {
     justify-content: center;
     flex-wrap: wrap;
     animation: fadeInUp 1s ease-out 0.6s both;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .countdown-item {
@@ -509,29 +515,33 @@ body::before {
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.05);
-    padding: 8px 20px;
+    padding: 12px 20px;
     border-radius: 10px;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    min-width: 80px;
+    min-width: 90px;
+    gap: 0.5rem;
 }
 
 .countdown-number {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
     font-weight: 300;
-    line-height: 1;
+    line-height: 1.2;
     color: white;
     text-shadow: none;
     font-family: var(--font-body);
+    min-width: 2.5ch;
+    text-align: center;
+    display: block;
 }
 
 .countdown-label {
     font-size: clamp(0.65rem, 1vw, 0.75rem);
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 0.25rem;
     opacity: 0.8;
     font-weight: 400;
+    line-height: 1;
 }
 
 .scroll-indicator {
@@ -562,6 +572,7 @@ section:not(.hero-section):not(.foto-principal-section) {
     margin-bottom: 40px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 section:not(.hero-section):not(.foto-principal-section):hover {
     transform: translateY(-5px);
@@ -603,7 +614,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
 /* Nosotros Section */
 .nosotros-section {
-    background: var(--color-blanco) !important;
+    background: var(--color-beige) !important;
     padding: 40px 20px !important;
     display: flex;
     flex-direction: column;
@@ -627,6 +638,8 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     margin-left: auto;
     margin-right: auto;
     font-family: var(--font-secondary);
+    -webkit-text-stroke: 0.3px var(--color-gris-medio);
+    text-shadow: 0 0 0.5px var(--color-gris-medio);
 }
 
 .photo-carousel {
@@ -656,6 +669,10 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.carousel-slide:nth-child(2) img {
+    object-position: 58% center;
 }
 
 .carousel-dots {
@@ -750,11 +767,14 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
 .cuando-intro {
     font-family: var(--font-body);
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     color: var(--color-gris-medio);
     margin-bottom: 2.5rem;
     line-height: 1.6;
     font-style: italic;
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-gris-medio);
+    text-shadow: 0 0 0.5px var(--color-gris-medio);
 }
 
 .cuando-fecha {
@@ -777,10 +797,13 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
 .cuando-final {
     font-family: var(--font-body);
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     color: var(--color-gris-medio);
     font-style: italic;
     margin-top: 2rem;
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-gris-medio);
+    text-shadow: 0 0 0.5px var(--color-gris-medio);
 }
 
 /* Donde Section */
@@ -830,8 +853,10 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     font-family: var(--font-body);
     font-size: clamp(1.6rem, 3vw, 2rem);
     color: var(--color-text);
-    font-weight: 600;
+    font-weight: 900;
     margin-bottom: 0.5rem;
+    -webkit-text-stroke: 0.3px var(--color-text);
+    text-shadow: 0 0 0.5px var(--color-text);
 }
 
 .donde-address {
@@ -840,11 +865,14 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     color: var(--color-gris-medio);
     font-style: italic;
     margin-bottom: 2rem;
+    font-weight: 900;
+    -webkit-text-stroke: 0.5px var(--color-gris-medio);
+    text-shadow: 0 0 1px var(--color-gris-medio);
 }
 
 .donde-note {
     font-family: var(--font-body);
-    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
     color: var(--color-gris-oscuro);
     font-style: italic;
     line-height: 1.8;
@@ -854,7 +882,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     padding: 20px 30px;
     border-radius: 0;
     border: none;
-    font-weight: 400;
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-gris-oscuro);
+    text-shadow: 0 0 0.5px var(--color-gris-oscuro);
 }
 
 /* Map */
@@ -933,12 +963,14 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
 .dresscode-title {
     font-family: var(--font-body);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 400;
+    font-size: clamp(2.3rem, 4.5vw, 3.5rem);
+    font-weight: 700;
     letter-spacing: 8px;
     margin: 0;
     padding: 0;
     color: var(--color-beige);
+    -webkit-text-stroke: 0.3px var(--color-beige);
+    text-shadow: 0 0 0.5px var(--color-beige);
 }
 
 .dresscode-divider {
@@ -950,7 +982,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
 .dresscode-type {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem);
+    font-size: clamp(3.5rem, 7vw + 0.5rem, 7rem);
     text-align: center;
     margin: 0;
     padding: 0;
@@ -960,12 +992,15 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 }
 
 .dresscode-description {
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
     line-height: 1.9;
     color: var(--color-beige);
-    font-weight: 300;
+    font-weight: 500;
     margin: 0;
     padding: 0 20px;
+    font-style: italic;
+    -webkit-text-stroke: 0.1px var(--color-beige);
+    text-shadow: 0 0 0.2px var(--color-beige);
 }
 
 .dresscode-description em {
@@ -1005,8 +1040,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     color: var(--color-text-light) !important;
     font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     margin-bottom: 2rem;
-    font-weight: 400;
+    font-weight: 900;
     text-shadow: none;
+    -webkit-text-stroke: 0.3px var(--color-text-light);
 }
 
 .confirmacion-section .section-text {
@@ -1014,6 +1050,8 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
     margin-bottom: 2.5rem;
     text-shadow: none;
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-text-light);
 }
 
 .confirmation-note {
@@ -1021,12 +1059,18 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     font-size: clamp(0.9rem, 1.5vw, 1rem);
     margin-top: 2rem;
     font-style: italic;
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-gris-medio);
+    text-shadow: 0 0 0.5px var(--color-gris-medio);
 }
 
 .btn-confirmar {
     background: transparent !important;
     color: var(--color-gris-oscuro) !important;
     border: 2px solid var(--color-gris-oscuro) !important;
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-gris-oscuro);
+    text-shadow: 0 0 0.5px var(--color-gris-oscuro);
 }
 
 .btn-confirmar:hover {
@@ -1035,6 +1079,8 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     border-color: var(--color-gris-oscuro) !important;
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    -webkit-text-stroke: 0.3px white;
+    text-shadow: 0 0 0.5px white;
 }
 
 /* Buttons */
@@ -1062,6 +1108,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     background: transparent;
     color: white;
     border: 2px solid white;
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px white;
+    text-shadow: 0 0 0.5px white;
 }
 
 .btn-primary:hover {
@@ -1070,6 +1119,8 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     border-color: white;
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+    -webkit-text-stroke: 0.3px #2a2a2a;
+    text-shadow: 0 0 0.5px #2a2a2a;
 }
 
 .btn-secondary {
@@ -1087,6 +1138,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     background: transparent;
     color: var(--color-gris-oscuro);
     border: 2px solid var(--color-gris-oscuro);
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-gris-oscuro);
+    text-shadow: 0 0 0.5px var(--color-gris-oscuro);
 }
 
 .btn-map:hover {
@@ -1095,6 +1149,8 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     border-color: var(--color-gris-oscuro);
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    -webkit-text-stroke: 0.3px white;
+    text-shadow: 0 0 0.5px white;
 }
 
 
@@ -1108,12 +1164,16 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     background: transparent;
     color: var(--color-gris-oscuro);
     border: 2px solid var(--color-gris-oscuro);
+    -webkit-text-stroke: 0.3px var(--color-gris-oscuro);
+    text-shadow: 0 0 0.5px var(--color-gris-oscuro);
 }
 
 .regalos-section .btn-primary:hover {
     background: var(--color-gris-oscuro);
     color: white;
     border-color: var(--color-gris-oscuro);
+    -webkit-text-stroke: 0.3px white;
+    text-shadow: 0 0 0.5px white;
 }
 .datos-cuenta {
     background: white;
@@ -1129,7 +1189,10 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 .datos-cuenta p {
     font-size: clamp(1.1rem, 2.2vw, 1.3rem);
     margin-bottom: 12px;
-    font-weight: 500;
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-gris-oscuro);
+    text-shadow: 0 0 0.5px var(--color-gris-oscuro);
+    color: var(--color-gris-oscuro);
 }
 
 .hidden {
@@ -1146,8 +1209,10 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    font-weight: 400;
+    font-weight: 900;
     line-height: 1.7;
+    -webkit-text-stroke: 0.3px var(--color-text-light);
+    text-shadow: 0 0 0.5px var(--color-text-light);
 }
 
 /* Highlight */
@@ -1164,6 +1229,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 .playlist-section .section-subtitle,
 .playlist-section .section-text {
     color: var(--color-beige);
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-beige);
+    text-shadow: 0 0 0.5px var(--color-beige);
 }
 
 .fotos-section {
@@ -1175,6 +1243,28 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     font-weight: 700;
 }
 
+.fotos-section .section-subtitle {
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-text-light);
+    text-shadow: 0 0 0.5px var(--color-text-light);
+}
+
+.fotos-section .section-text {
+    font-weight: 900;
+    -webkit-text-stroke: 0.3px var(--color-text);
+    text-shadow: 0 0 0.5px var(--color-text);
+}
+
+.app-link {
+    color: inherit;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.app-link:hover {
+    opacity: 0.7;
+}
+
 /* Footer */
 .footer {
     background: var(--color-primary);
@@ -1182,10 +1272,20 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     text-align: center;
     padding: 30px 20px;
     font-size: 1rem;
+    font-family: 'Assistant', 'Montserrat', 'Arial', sans-serif;
 }
 
 .footer p {
     margin: 0.5rem 0;
+}
+
+.footer-names {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+}
+
+.footer-date {
+    font-weight: 400;
 }
 
 .attribution {
@@ -1441,17 +1541,13 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
     .names {
         padding-top: 0.5rem;
-        font-size: clamp(2.5rem, 7.5vw, 3.8rem);
+        font-size: 14vw;
         margin-bottom: 1.5rem;
     }
 
     .names::before {
         top: -30px;
         font-size: 1.3rem;
-    }
-
-    .hero-content h1 {
-        font-size: clamp(2.3rem, 7vw, 3.5rem);
     }
 
     .hero-text {
@@ -1462,25 +1558,37 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
         padding: 0 10px;
     }
 
+    .hero-star-top img,
+    .hero-star-bottom img {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .dresscode-icon img {
+        width: 7vw;
+        height: 7vw;
+    }
+
     .hero-subtitle {
         font-size: clamp(0.9rem, 3vw, 1.1rem);
         margin-bottom: 15px;
     }
 
     .countdown {
-        gap: 0.5rem;
-        margin-top: 2.5rem;
-        margin-bottom: 0;
+        gap: 0.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .countdown-item {
-        min-width: 50px;
-        padding: 8px 10px;
+        min-width: 60px;
+        padding: 8px 8px;
+        gap: 0.3rem;
     }
 
     .countdown-number {
-        font-size: clamp(1.3rem, 5vw, 1.8rem);
-        margin-bottom: 2px;
+        font-size: clamp(1.1rem, 4vw, 1.5rem);
+        min-width: 2.5ch;
     }
 
     .countdown-label {
@@ -1544,6 +1652,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     .cuando-intro {
         font-size: clamp(0.9rem, 3vw, 1.1rem);
         margin-bottom: 2rem;
+        font-weight: 900;
+        -webkit-text-stroke: 0.3px var(--color-gris-medio);
+        text-shadow: 0 0 0.5px var(--color-gris-medio);
     }
 
     .cuando-fecha {
@@ -1559,6 +1670,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
     .cuando-final {
         font-size: clamp(0.9rem, 3vw, 1.1rem);
+        font-weight: 900;
+        -webkit-text-stroke: 0.3px var(--color-gris-medio);
+        text-shadow: 0 0 0.5px var(--color-gris-medio);
     }
 
     /* Nosotros Section Mobile */
@@ -1573,6 +1687,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     .nosotros-text {
         font-size: clamp(0.95rem, 3.5vw, 1.2rem);
         margin-bottom: 30px;
+        font-weight: 900;
+        -webkit-text-stroke: 0.3px var(--color-gris-medio);
+        text-shadow: 0 0 0.5px var(--color-gris-medio);
     }
 
     /* Donde Section Mobile */
@@ -1628,8 +1745,10 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
         font-family: var(--font-body);
         font-size: clamp(1.1rem, 3.5vw, 1.4rem);
         color: var(--color-text);
-        font-weight: 600;
+        font-weight: 900;
         margin-bottom: 0.3rem;
+        -webkit-text-stroke: 0.3px var(--color-text);
+        text-shadow: 0 0 0.5px var(--color-text);
     }
 
     .donde-address {
@@ -1638,6 +1757,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
         color: var(--color-gris-medio);
         font-style: italic;
         margin-bottom: 1.5rem;
+        font-weight: 900;
+        -webkit-text-stroke: 0.5px var(--color-gris-medio);
+        text-shadow: 0 0 1px var(--color-gris-medio);
     }
 
     .btn-map {
@@ -1654,7 +1776,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
         transition: all 0.3s ease;
         display: inline-block;
         margin-bottom: 1.5rem;
-        font-weight: 400;
+        font-weight: 900;
+        -webkit-text-stroke: 0.3px var(--color-gris-oscuro);
+        text-shadow: 0 0 0.5px var(--color-gris-oscuro);
     }
 
     .btn-map:hover {
@@ -1666,12 +1790,15 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
     .donde-note {
         font-family: var(--font-body);
-        font-size: clamp(0.65rem, 2vw, 0.8rem);
-        color: var(--color-gris-medio);
+        font-size: clamp(0.85rem, 2.5vw, 1rem);
+        color: var(--color-gris-oscuro);
         font-style: italic;
-        line-height: 1.5;
+        line-height: 1.8;
         max-width: 90%;
         margin: 0 auto;
+        font-weight: 900;
+        -webkit-text-stroke: 0.3px var(--color-gris-oscuro);
+        text-shadow: 0 0 0.5px var(--color-gris-oscuro);
     }
 
     /* Dresscode Section Mobile */
@@ -1688,10 +1815,13 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
         font-size: clamp(1.5rem, 5vw, 2rem);
         letter-spacing: 4px;
         margin-bottom: 1rem;
+        font-weight: 700;
+        -webkit-text-stroke: 0.3px var(--color-beige);
+        text-shadow: 0 0 0.5px var(--color-beige);
     }
 
     .dresscode-type {
-        font-size: clamp(2rem, 7vw, 3.5rem);
+        font-size: clamp(3.5rem, 15vw, 7rem);
         letter-spacing: 0;
         margin-bottom: 1.5rem;
     }
@@ -1699,6 +1829,10 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     .dresscode-description {
         font-size: clamp(0.95rem, 3vw, 1.15rem);
         line-height: 1.7;
+        font-weight: 500;
+        font-style: italic;
+        -webkit-text-stroke: 0.1px var(--color-beige);
+        text-shadow: 0 0 0.2px var(--color-beige);
     }
 
     .dresscode-stars {
@@ -1728,6 +1862,9 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
     .datos-cuenta p {
         font-size: clamp(0.95rem, 3vw, 1.1rem);
+        font-weight: 900;
+        -webkit-text-stroke: 0.3px var(--color-gris-oscuro);
+        text-shadow: 0 0 0.5px var(--color-gris-oscuro);
     }
 
     /* Footer Mobile */
