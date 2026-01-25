@@ -9,7 +9,7 @@
 @font-face {
     font-family: 'IM Black';
     src: url('fonts/IAMBlack.otf') format('opentype');
-    font-weight: normal;
+    font-weight: 900;
     font-style: normal;
 }
 
@@ -1168,6 +1168,11 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
 .fotos-section {
     background:#F6EBE4 !important;
+}
+
+.fotos-section strong {
+    font-family: 'Assistant', 'Montserrat', 'Arial', sans-serif;
+    font-weight: 700;
 }
 
 /* Footer */
