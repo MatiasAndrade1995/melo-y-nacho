@@ -2,9 +2,17 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Documentación de desarrollo
 GUION.
 README.md
 REFERENCIA_DISENO.md
+SEGURIDAD_SERVIDOR.md
+FAVICON_GUIDE.md
+VERCEL_CONFIG.md
+
+# Configuración de Claude
+.claude/
 
 # Editores
 .vscode/
@@ -19,3 +27,6 @@ REFERENCIA_DISENO.md
 # Archivos temporales
 *.tmp
 *.temp
+
+# Imágenes no utilizadas
+fondo-hojas-recuadros.png
