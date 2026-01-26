@@ -8,7 +8,12 @@
       "Bash(del \"c:\\\\Users\\\\Matias\\\\Desktop\\\\casamiento\\\\temp_demo1.html\" \"c:\\\\Users\\\\Matias\\\\Desktop\\\\casamiento\\\\temp_demo2.html\")",
       "Bash(echo:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd: Fondo decorativo dorado con efecto viñeta en secciones\n\n- Agregado fondo-hojas-recuadros.png como patrón decorativo\n- Implementado efecto de viñeta que difumina el centro de las secciones\n- Flores doradas en secciones oscuras \\(Hero, Dress Code, Playlist\\)\n- Flores gris oscuro en secciones claras \\(Nosotros, Cuando, Donde, etc.\\)\n- Actualizado .gitignore para incluir la imagen\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(gh pr view:*)",
+      "Bash(vercel --version:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nFeat: Agregar marco floral dorado a todas las secciones\n\n- Aplicar fondo decorativo con flores doradas a todas las secciones\n- Ajustar opacidad y tonalidad según tipo de sección \\(beige/oscura\\)\n- Recuadros beiges con mayor opacidad \\(0.85\\) y dorado oscuro\n- Recuadros oscuros con menor opacidad \\(0.3\\) para mantener legibilidad\n- Afinar estilo de puntos suspensivos para mejor legibilidad\n- Igualar color de iconos decorativos con texto en secciones oscuras\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }

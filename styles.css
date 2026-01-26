@@ -47,11 +47,8 @@
     --color-text-light: #707070;      /* Gris medio - Texto secundario */
     --color-background: #FEF7F1;      /* Crema - Fondo general */
 
-    /* Tipografías */
-    --font-heading: 'High Spirited', cursive;
-    --font-body: 'IM Black', 'Georgia', serif;
-    --font-secondary: 'IM Black', 'Georgia', serif;
-}
+    /* Imagen de fondo */
+    --background-image: url('fondo-hojas.jpg');
 
 /* Importar Google Fonts para mejor legibilidad */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
@@ -78,7 +75,7 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('fondo-hojas.jpg');
+    background-image: var(--background-image);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
