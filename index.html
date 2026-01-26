@@ -41,42 +41,46 @@
 
     <!-- Foto Principal Section -->
     <section id="foto-principal" class="foto-principal-section">
-        <img src="fotos/FOTO PRINCIPAL.JPG" alt="Melo & Nacho" class="foto-principal">
-        <div class="foto-principal-overlay">
-            <h1 class="nos-casamos">Nos casamos</h1>
-            <button class="play-button" id="playButton" aria-label="Reproducir nuestra canción">
-                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="30" cy="30" r="28" fill="white" fill-opacity="0.9"/>
-                    <path id="playIcon" d="M24 20L40 30L24 40V20Z" fill="#2a2a2a"/>
-                </svg>
-            </button>
-        </div>
-        <div class="decorative-heart-main">
-            <img src="iconos/corazon.png" alt="Corazón decorativo" width="80" height="80">
+        <div class="foto-principal-wrapper">
+            <img src="fotos/FOTO PRINCIPAL ok-05.jpg" alt="Melo & Nacho" class="foto-principal">
+            <div class="foto-principal-overlay">
+                <button class="play-button" id="playButton" aria-label="Reproducir nuestra canción">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="28" fill="white" fill-opacity="0.9"/>
+                        <path id="playIcon" d="M24 20L40 30L24 40V20Z" fill="#2a2a2a"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     </section>
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
         <div class="hero-content">
+            <div class="hero-star-top">
+                <img src="iconos/stars.png" alt="Estrellas" width="50" height="50">
+            </div>
             <h1 class="names">Melo & Nacho</h1>
-            <p class="hero-text">Toda gran historia tiene un momento inolvidable. Este es el nuestro y solo faltan...</p>
+            <p class="hero-text">Toda gran historia<br>tiene un momento inolvidable.<br>Este es el nuestro y solo faltan…</p>
+            <div class="hero-star-bottom">
+                <img src="iconos/stars.png" alt="Estrellas" width="50" height="50">
+            </div>
             <div id="countdown" class="countdown">
                 <div class="countdown-item">
                     <span id="days" class="countdown-number">00</span>
-                    <span class="countdown-label">Días</span>
+                    <span class="countdown-label">DÍAS</span>
                 </div>
                 <div class="countdown-item">
                     <span id="hours" class="countdown-number">00</span>
-                    <span class="countdown-label">Horas</span>
+                    <span class="countdown-label">HS</span>
                 </div>
                 <div class="countdown-item">
                     <span id="minutes" class="countdown-number">00</span>
-                    <span class="countdown-label">Minutos</span>
+                    <span class="countdown-label">MIN</span>
                 </div>
                 <div class="countdown-item">
                     <span id="seconds" class="countdown-number">00</span>
-                    <span class="countdown-label">Segundos</span>
+                    <span class="countdown-label">SEG</span>
                 </div>
             </div>
         </div>
@@ -87,7 +91,7 @@
     <section id="nosotros" class="nosotros-section">
         <div class="container">
             <h2 class="section-title">Nosotros</h2>
-            <p class="nosotros-text">Frase que nos falta elegir.</p>
+                <p class="nosotros-text">Nuestra historia comenzó en enero de 2010. Hoy, 16 años después, las cosquillas en la panza de aquel entonces siguen ahí, pero con la fuerza de un amor que no dejó nunca de crecer.<br><br>Nos casamos porque creemos que no hay nada más importante que el amor y queremos celebrarlo reuniendo, en un mismo lugar, a todas las personas que amamos. Gracias por formar parte de este momento que recordaremos por siempre.</p>
             <div class="photo-carousel">
                 <div class="carousel-container">
                     <div class="carousel-track" id="carouselTrack">
@@ -110,8 +114,8 @@
             <img src="iconos/anillos.png" alt="Anillos de boda" width="80" height="80">
         </div>
         <div class="container cuando-content">
-            <p class="cuando-subtitle">La cuenta regresiva ya comenzó…</p>
-            <p class="cuando-intro">nos encontraremos para celebrar<br>este amor el día</p>
+            <h2 class="section-title">La cuenta regresiva ya comenzó…</h2>
+            <p class="cuando-intro">Nos encontraremos para celebrar<br>este amor el día</p>
             <h2 class="cuando-fecha">11 DE ABRIL<br><span class="cuando-year">DE 2026</span></h2>
             <p class="cuando-final">¡Nada nos hará más felices que verte ahí!</p>
         </div>
@@ -120,88 +124,102 @@
     <!-- Donde Section -->
     <section id="donde" class="donde-section">
         <div class="section-tag">¿Dónde?</div>
-        <div class="decorative-icon icon-candles">
-            <img src="iconos/velas.png" alt="Velas decorativas" width="80" height="80">
+        <div class="decorative-icon icon-fireworks">
+            <img src="iconos/fireworks.png" alt="Celebración" width="80" height="80">
         </div>
         <div class="container donde-content">
             <h2 class="donde-title">Ceremonia y fiesta</h2>
             <div class="donde-info">
-                <p class="donde-time">16:00 hs</p>
+                <p class="donde-time">16:30 hs</p>
                 <p class="donde-venue">Estación Fátima Eventos</p>
                 <p class="donde-address">Isla Jorge 290, Fátima, Pilar</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Isla+Jorge+290+Fátima+Pilar" target="_blank" class="btn btn-map">Ver Mapa</a>
-                <p class="donde-note">Importante: ¡Los novios serán puntuales!<br>No te pierdas la ceremonia que va a ser mágica</p>
+                <a href="https://maps.app.goo.gl/iJf17hzn68g182eR6" target="_blank" class="btn btn-map">Ver Mapa</a>
+                <p class="donde-note">Importante: ¡Los novios serán puntuales! No te pierdas la ceremonia. Será mágica.</p>
             </div>
         </div>
     </section>
 
     <!-- Dress Code Section -->
     <section id="dresscode" class="dresscode-section">
-        <div class="dresscode-tag">¿Cómo?</div>
+        <div class="section-tag">¿Cómo?</div>
         <div class="dresscode-content">
-            <div class="dresscode-stars">✦</div>
+            <div class="dresscode-icon">
+                <img src="iconos/stars.png" alt="Estrellas" width="40" height="40">
+            </div>
             <h2 class="dresscode-title">DRESS CODE</h2>
             <div class="dresscode-divider"></div>
             <p class="dresscode-type">Elegante</p>
-            <p class="dresscode-description">¡Elegí algo <em>dentro de tu propio estilo</em>,<br>que te haga sentir increíble<br>y listo/a para bailar toda la noche!</p>
-            <div class="dresscode-stars">✦</div>
+            <p class="dresscode-description">Elegí algo dentro de tu estilo que te haga sentir increíble y que sea, sobre todo, ¡apto para bailar toda la noche!</p>
+            <div class="dresscode-icon">
+                <img src="iconos/stars.png" alt="Estrellas" width="40" height="40">
+            </div>
         </div>
     </section>
 
     <!-- Confirmacion Section -->
     <section id="confirmacion" class="confirmacion-section">
+        <div class="section-tag">RSVP</div>
         <div class="confirmacion-content">
             <h2 class="section-title">¿Nos acompañas?</h2>
-            <p class="section-subtitle">✦ Lo lindo, compartido, se vuelve inolvidable ✦</p>
+            <p class="section-subtitle">El amor es más lindo cuando se comparte.</p>
             <p class="section-text">Tu confirmación nos ayuda a organizar todo con cuidado y mucho amor.</p>
-            <a href="#" class="btn btn-confirmar">Confirmar Asistencia</a>
-            <p class="confirmation-note">Esta invitación es personal e intransferible.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScN3IBMgD_vJpt7qTrVyLmdkxdAPXbp_KiaJ30GweLSvL8EIQ/viewform?usp=publish-editor" target="_blank" class="btn btn-confirmar">Confirmar Asistencia</a>
+            <p class="confirmation-note">Completar el formulario preferentemente antes del 10/3/2026.</p>
         </div>
     </section>
 
     <!-- Regalos Section -->
     <section id="regalos" class="regalos-section">
+        <div class="section-tag">Regalos</div>
+        <div class="decorative-icon icon-candles">
+            <img src="iconos/regalo.png" alt="Velas decorativas" width="80" height="80">
+        </div>
         <div class="container">
-            <h2 class="section-title">Regalos</h2>
-            <p class="section-quote">"No se puede vivir del amor, es por eso que habilitamos nuestra Caja de Supervivencia para recién casados"</p>
+            <p class="section-quote">No se puede vivir del amor, es por eso que habilitamos nuestra Caja de Supervivencia para recién casados...</p>
             <div class="btn-wrapper">  
-                <button class="btn btn-secondary" id="btnDatosCuenta">Datos de la Cuenta</button>
+                <button class="btn btn-primary" id="btnDatosCuenta">Datos de la Cuenta</button>
             </div>
             <div id="datosCuenta" class="datos-cuenta hidden">
-                <p>CBU: [COMPLETAR]</p>
-                <p>Alias: [COMPLETAR]</p>
-                <p>Titular: [COMPLETAR]</p>
+                <p>CBU: 0000003100095740260814</p>
+                <p>Alias: meloynacho</p>
+                <p>Titular: Ignacio Tadeo Cabrera</p>
             </div>
         </div>
     </section>
 
     <!-- Playlist Section -->
     <section id="playlist" class="playlist-section">
+        <div class="decorative-icon icon-dj">
+            <img src="iconos/dj.png" alt="DJ y música" width="80" height="80">
+        </div>
         <div class="container">
-            <h2 class="section-title">Playlist</h2>
             <p class="section-subtitle">Armemos juntos el mejor soundtrack.</p>
             <p class="section-text">Sugerí tu tema infaltable:</p>
             <div class="btn-wrapper">
-                <a href="#" class="btn btn-primary">Recomendar Canción</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAv9OQb-qHyTSndfMnl8a4Du6ZJb25RqLQ7FsyQkB5ef6Umw/viewform?usp=publish-editor" target="_blank" class="btn btn-primary">Recomendar Canción</a>
             </div>
         </div>
     </section>
 
     <!-- Fotos Section -->
     <section id="fotos" class="fotos-section">
+        <div class="section-tag">Fotos</div>
+        <div class="decorative-icon icon-candles">
+            <img src="iconos/camara.png" alt="Velas decorativas" width="80" height="80">
+        </div>
         <div class="container">
-            <h2 class="section-title">Fotos</h2>
             <p class="section-subtitle">Hay momentos que no vamos a llegar a ver… Pero vos sí.</p>
-            <p class="section-text">Compartilo con nosotros.</p>
-            <p class="section-text">Descargá la app <strong>Webshoots</strong></p>
-            <p class="section-text">Código del álbum: <strong>[ARMARLO]</strong></p>
+            <p class="section-text">Comparti tus fotos con nosotros.</p>
+            <p class="section-text">Descargá la app: <strong><a href="https://play.google.com/store/apps/details?id=net.bodas.android.wedshoots" target="_blank" class="app-link">Wedshoots</a></strong></p>
+            <p class="section-text">Código del álbum: <strong>ESeeb4aff7</strong></p>
         </div>
     </section>
 
     <footer class="footer">
         <p class="footer-names">Melo & Nacho</p>
         <p class="footer-date">11 de Abril 2026</p>
-        <p class="attribution">Icons by <a href="https://www.flaticon.com/authors/liara-studio" target="_blank">Liara Studio</a>, <a href="https://www.flaticon.com/authors/freepik" target="_blank">Freepik</a> & <a href="https://www.flaticon.com/authors/smashingstocks" target="_blank">smashingstocks</a> - Flaticon</p>
+        <p class="attribution">Icons by <a href="https://www.flaticon.com/authors/liara-studio" target="_blank">Liara Studio</a>, <a href="https://www.flaticon.com/free-icons/camara" title="camara icons">Ralf Schmitzer</a>, <a href="https://www.flaticon.com/authors/smashingstocks" target="_blank">smashingstocks</a>, <a href="https://www.flaticon.com/free-icons/gift-card" title="gift card icons">Icon home</a>, <a href="https://www.flaticon.com/free-icons/dj-music" title="dj music icons">Reion</a>, <a href="https://www.flaticon.com/free-icons/celebration" title="celebration icons">istar_design_bureau</a>, <a href="https://www.flaticon.com/free-icons/sparkle" title="sparkle icons">meaicon</a> & <a href="https://www.flaticon.com/authors/freepik" target="_blank">Freepik</a> - Flaticon</p>
+        <p class="attribution">Música: "Photograph" por Ed Sheeran</p>
     </footer>
 
     <script src="script.js"></script>
