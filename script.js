@@ -1,4 +1,7 @@
-// Countdown Timer
+// Countdown Timer with visibility optimization
+let countdownInterval = null;
+let isCountdownVisible = false;
+
 function updateCountdown() {
     const weddingDate = new Date('2026-04-11T16:00:00').getTime();
     const now = new Date().getTime();
@@ -6,6 +9,10 @@ function updateCountdown() {
 
     if (distance < 0) {
         document.getElementById('countdown').innerHTML = '<p class="countdown-text">¡El gran día ha llegado!</p>';
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+            countdownInterval = null;
+        }
         return;
     }
 
@@ -14,15 +21,50 @@ function updateCountdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+    if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+    if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+    if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
 }
 
-// Update countdown every second
-setInterval(updateCountdown, 1000);
-updateCountdown();
+function startCountdown() {
+    if (!countdownInterval && isCountdownVisible) {
+        updateCountdown();
+        countdownInterval = setInterval(updateCountdown, 1000);
+    }
+}
+
+function stopCountdown() {
+    if (countdownInterval) {
+        clearInterval(countdownInterval);
+        countdownInterval = null;
+    }
+}
+
+// Observe countdown visibility to pause when not visible
+const countdownObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        isCountdownVisible = entry.isIntersecting;
+        if (entry.isIntersecting) {
+            startCountdown();
+        } else {
+            stopCountdown();
+        }
+    });
+}, { threshold: 0.1 });
+
+// Initialize countdown observer when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    const countdownEl = document.getElementById('countdown');
+    if (countdownEl) {
+        countdownObserver.observe(countdownEl);
+    }
+});
 
 // Photo Carousel
 class PhotoCarousel {
@@ -181,10 +223,16 @@ document.addEventListener('DOMContentLoaded', () => {
         progressBar.max = Math.floor(audioElement.duration);
     });
 
-    // Actualizar progreso
+    // Actualizar progreso con throttling para mejor rendimiento
+    let lastUpdate = 0;
     audioElement.addEventListener('timeupdate', () => {
-        currentTimeEl.textContent = formatTime(audioElement.currentTime);
-        progressBar.value = audioElement.currentTime;
+        const now = Date.now();
+        // Throttle: actualizar solo cada 250ms en lugar de varias veces por segundo
+        if (now - lastUpdate >= 250) {
+            currentTimeEl.textContent = formatTime(audioElement.currentTime);
+            progressBar.value = audioElement.currentTime;
+            lastUpdate = now;
+        }
     });
 
     // Cambiar posición con la barra de progreso
@@ -199,16 +247,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Intersection Observer for fade-in animations
+// Intersection Observer for fade-in animations (optimized)
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
+let observedElements = new Set();
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            // Dejar de observar este elemento para liberar recursos
+            observer.unobserve(entry.target);
+            observedElements.delete(entry.target);
+
+            // Si todos los elementos fueron observados, desconectar el observer
+            if (observedElements.size === 0) {
+                observer.disconnect();
+            }
         }
     });
 }, observerOptions);
@@ -218,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section:not(.hero-section):not(.foto-principal-section)');
     sections.forEach(section => {
         section.classList.add('fade-in');
+        observedElements.add(section);
         observer.observe(section);
     });
 });

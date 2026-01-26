@@ -38,7 +38,7 @@
     <div id="musicPlayer" class="music-player hidden">
         <button class="close-music" id="closeMusic" aria-label="Cerrar música">✕</button>
         <div class="audio-player-container">
-            <audio id="audioElement" preload="auto">
+            <audio id="audioElement" preload="none">
                 <source src="musica/cancion.mp3" type="audio/mpeg">
             </audio>
             <div class="audio-controls">
@@ -119,11 +119,11 @@
             <div class="photo-carousel">
                 <div class="carousel-container">
                     <div class="carousel-track" id="carouselTrack">
-                        <div class="carousel-slide"><img src="fotos/5.JPG" alt="Melo y Nacho"></div>
-                        <div class="carousel-slide"><img src="fotos/6.JPG" alt="Melo y Nacho"></div>
-                        <div class="carousel-slide"><img src="fotos/7.JPG" alt="Melo y Nacho"></div>
-                        <div class="carousel-slide"><img src="fotos/8.JPG" alt="Melo y Nacho"></div>
-                        <div class="carousel-slide"><img src="fotos/9.JPG" alt="Melo y Nacho"></div>
+                        <div class="carousel-slide"><img src="fotos/5.JPG" alt="Melo y Nacho" loading="lazy"></div>
+                        <div class="carousel-slide"><img src="fotos/6.JPG" alt="Melo y Nacho" loading="lazy"></div>
+                        <div class="carousel-slide"><img src="fotos/7.JPG" alt="Melo y Nacho" loading="lazy"></div>
+                        <div class="carousel-slide"><img src="fotos/8.JPG" alt="Melo y Nacho" loading="lazy"></div>
+                        <div class="carousel-slide"><img src="fotos/9.JPG" alt="Melo y Nacho" loading="lazy"></div>
                     </div>
                 </div>
                 <div class="carousel-dots" id="carouselDots"></div>
@@ -135,7 +135,7 @@
     <section id="cuando" class="cuando-section">
         <div class="section-tag">¿Cuándo?</div>
         <div class="decorative-icon icon-rings">
-            <img src="iconos/anillos.png" alt="Anillos de boda" width="80" height="80">
+            <img src="iconos/anillos.png" alt="Anillos de boda" width="80" height="80" loading="lazy">
         </div>
         <div class="container cuando-content">
             <h2 class="section-title">La cuenta regresiva<br class="mobile-break"> ya comenzó…</h2>
@@ -149,7 +149,7 @@
     <section id="donde" class="donde-section">
         <div class="section-tag">¿Dónde?</div>
         <div class="decorative-icon icon-fireworks">
-            <img src="iconos/fireworks.png" alt="Celebración" width="80" height="80">
+            <img src="iconos/fireworks.png" alt="Celebración" width="80" height="80" loading="lazy">
         </div>
         <div class="container donde-content">
             <h2 class="donde-title">Ceremonia y fiesta</h2>
@@ -196,7 +196,7 @@
     <section id="regalos" class="regalos-section">
         <div class="section-tag">Regalos</div>
         <div class="decorative-icon icon-candles">
-            <img src="iconos/regalo.png" alt="Velas decorativas" width="80" height="80">
+            <img src="iconos/regalo.png" alt="Velas decorativas" width="80" height="80" loading="lazy">
         </div>
         <div class="container">
             <p class="section-quote">No se puede vivir del amor, es por eso que habilitamos nuestra Caja de Supervivencia para recién casados...</p>
@@ -214,7 +214,7 @@
     <!-- Playlist Section -->
     <section id="playlist" class="playlist-section">
         <div class="decorative-icon icon-dj">
-            <img src="iconos/dj.png" alt="DJ y música" width="80" height="80">
+            <img src="iconos/dj.png" alt="DJ y música" width="80" height="80" loading="lazy">
         </div>
         <div class="container">
             <p class="section-subtitle">Armemos juntos el mejor soundtrack.</p>
@@ -229,7 +229,7 @@
     <section id="fotos" class="fotos-section">
         <div class="section-tag">Fotos</div>
         <div class="decorative-icon icon-candles">
-            <img src="iconos/camara.png" alt="Velas decorativas" width="80" height="80">
+            <img src="iconos/camara.png" alt="Velas decorativas" width="80" height="80" loading="lazy">
         </div>
         <div class="container">
             <p class="section-subtitle">Hay momentos que no vamos a llegar a ver<span class="ellipsis-thin">...</span> Pero vos sí.</p>
