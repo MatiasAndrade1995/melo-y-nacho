@@ -175,6 +175,26 @@ function applyConfig() {
         if (carouselSlides[index]) carouselSlides[index].src = photo;
     });
 
+    // Iconos
+    if (weddingConfig.icons) {
+        // Cambiar iconos específicos por su ubicación en el DOM
+        const iconSelectors = {
+            stars: '.hero-star-top img, .hero-star-bottom img, .dresscode-icon img',
+            rings: '.decorative-icon.icon-rings img',
+            fireworks: '.decorative-icon.icon-fireworks img',
+            gift: '.decorative-icon.icon-candles img, .regalos-section .decorative-icon img',
+            dj: '.playlist-section .decorative-icon img',
+            camera: '.fotos-section .decorative-icon img'
+        };
+
+        Object.keys(iconSelectors).forEach(iconKey => {
+            if (weddingConfig.icons[iconKey]) {
+                const elements = document.querySelectorAll(iconSelectors[iconKey]);
+                elements.forEach(el => el.src = weddingConfig.icons[iconKey]);
+            }
+        });
+    }
+
     // Fondo
     const bodyAfter = document.querySelector('body::after');
     if (bodyAfter) {
