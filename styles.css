@@ -431,6 +431,23 @@ body::before {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('fondo_recuadro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    filter: sepia(0.4) saturate(1.5) brightness(1.2) hue-rotate(-10deg);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .hero-section:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
@@ -614,11 +631,35 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
 /* Nosotros Section */
 .nosotros-section {
+    position: relative;
     background: var(--color-beige) !important;
     padding: 40px 20px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.nosotros-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('fondo_recuadro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.85;
+    filter: sepia(0.7) saturate(1.6) brightness(0.9) hue-rotate(-5deg);
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.nosotros-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .nosotros-section .section-title {
@@ -699,13 +740,32 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 /* Cuando Section */
 .cuando-section {
     position: relative;
-    background: var(--color-blanco);
+    background: #2a2a2a !important;
+    color: white;
     padding: 100px 40px;
     margin: 60px auto;
     max-width: 1000px;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     overflow: visible;
+}
+
+.cuando-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('fondo_recuadro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    filter: sepia(0.4) saturate(1.5) brightness(1.2) hue-rotate(-10deg);
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 0;
 }
 
 .section-tag {
@@ -727,7 +787,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     left: 50%;
     transform: translateX(-50%);
     opacity: 0.6;
-    z-index: 5;
+    z-index: 1;
 }
 
 /* Ajuste específico para los iconos en regalos, playlist y fotos */
@@ -743,22 +803,36 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     top: 0;
 }
 
-/* Icono de DJ en Playlist - color beige para fondo oscuro */
+/* Iconos en secciones oscuras - color beige para fondo oscuro */
 .playlist-section .decorative-icon img {
-    filter: brightness(0) invert(1);
+    filter: brightness(0) saturate(100%) invert(94%) sepia(8%) saturate(542%) hue-rotate(327deg) brightness(98%) contrast(93%);
+    opacity: 0.85;
+}
+
+/* Icono de anillos - mismo color que título */
+.cuando-section .decorative-icon img {
+    filter: brightness(0) saturate(100%) invert(94%) sepia(8%) saturate(542%) hue-rotate(327deg) brightness(98%) contrast(93%);
     opacity: 0.85;
 }
 
 .cuando-content {
     text-align: center;
     position: relative;
-    z-index: 5;
+    z-index: 1;
+}
+
+.cuando-section .section-title {
+    color: rgba(246, 235, 228, 0.85);
+}
+
+.cuando-section .section-title .mobile-break {
+    display: none;
 }
 
 .cuando-subtitle {
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw + 0.5rem, 4rem);
-    color: var(--color-primary);
+    color: var(--color-beige);
     margin-bottom: 2rem;
     font-style: normal;
     letter-spacing: 0;
@@ -768,19 +842,17 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 .cuando-intro {
     font-family: var(--font-body);
     font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    color: var(--color-gris-medio);
+    color: rgba(246, 235, 228, 0.85);
     margin-bottom: 2.5rem;
     line-height: 1.6;
     font-style: italic;
     font-weight: 900;
-    -webkit-text-stroke: 0.3px var(--color-gris-medio);
-    text-shadow: 0 0 0.5px var(--color-gris-medio);
 }
 
 .cuando-fecha {
     font-family: var(--font-secondary);
     font-size: clamp(3.5rem, 7vw, 6rem);
-    color: var(--color-gris-oscuro);
+    color: rgba(246, 235, 228, 0.9);
     letter-spacing: 4px;
     line-height: 1.2;
     margin-bottom: 2.5rem;
@@ -798,12 +870,10 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 .cuando-final {
     font-family: var(--font-body);
     font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    color: var(--color-gris-medio);
+    color: rgba(246, 235, 228, 0.85);
     font-style: italic;
     margin-top: 2rem;
     font-weight: 900;
-    -webkit-text-stroke: 0.3px var(--color-gris-medio);
-    text-shadow: 0 0 0.5px var(--color-gris-medio);
 }
 
 /* Donde Section */
@@ -818,10 +888,28 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     overflow: visible;
 }
 
+.donde-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('fondo_recuadro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.85;
+    filter: sepia(0.7) saturate(1.6) brightness(0.9) hue-rotate(-5deg);
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 0;
+}
+
 .donde-content {
     text-align: center;
     position: relative;
-    z-index: 5;
+    z-index: 1;
 }
 
 .donde-title {
@@ -912,6 +1000,24 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     padding: 60px 40px;
 }
 
+.dresscode-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('fondo_recuadro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    filter: sepia(0.4) saturate(1.5) brightness(1.2) hue-rotate(-10deg);
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 0;
+}
+
 .dresscode-tag {
     position: absolute;
     top: 30px;
@@ -931,7 +1037,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 .dresscode-content {
     text-align: center;
     position: relative;
-    z-index: 2;
+    z-index: 1;
     padding: 40px 0;
     max-width: 700px;
     margin: 0 auto;
@@ -1021,9 +1127,27 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     overflow: visible;
 }
 
+.confirmacion-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('fondo_recuadro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.85;
+    filter: sepia(0.7) saturate(1.6) brightness(0.9) hue-rotate(-5deg);
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 0;
+}
+
 .confirmacion-content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     padding: 60px 20px;
     max-width: 800px;
     margin: 0 auto;
@@ -1157,7 +1281,31 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 
 /* Regalos */
 .regalos-section{
+    position: relative;
     background: #F6EBE4 !important;
+}
+
+.regalos-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('fondo_recuadro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.85;
+    filter: sepia(0.7) saturate(1.6) brightness(0.9) hue-rotate(-5deg);
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.regalos-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .regalos-section .btn-primary {
@@ -1222,7 +1370,31 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 }
 
 .playlist-section {
+    position: relative;
     background: #2a2a2a !important;
+}
+
+.playlist-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('fondo_recuadro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    filter: sepia(0.4) saturate(1.5) brightness(1.2) hue-rotate(-10deg);
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.playlist-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .playlist-section .section-title,
@@ -1235,7 +1407,31 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 }
 
 .fotos-section {
+    position: relative;
     background:#F6EBE4 !important;
+}
+
+.fotos-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('fondo_recuadro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.85;
+    filter: sepia(0.7) saturate(1.6) brightness(0.9) hue-rotate(-5deg);
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.fotos-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .fotos-section strong {
@@ -1247,6 +1443,14 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     font-weight: 900;
     -webkit-text-stroke: 0.3px var(--color-text-light);
     text-shadow: 0 0 0.5px var(--color-text-light);
+}
+
+/* Estilo especial para puntos suspensivos más finos */
+.ellipsis-thin {
+    font-weight: 200;
+    -webkit-text-stroke: 0px !important;
+    text-shadow: none !important;
+    opacity: 0.8;
 }
 
 .fotos-section .section-text {
@@ -1408,6 +1612,12 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .cuando-section .section-title .mobile-break {
+        display: inline;
+    }
+}
+
 @media (max-width: 768px) {
     /* Fix para el fondo en móviles */
     body::after {
@@ -1719,8 +1929,6 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
         font-size: clamp(0.9rem, 3vw, 1.1rem);
         margin-bottom: 2rem;
         font-weight: 900;
-        -webkit-text-stroke: 0.3px var(--color-gris-medio);
-        text-shadow: 0 0 0.5px var(--color-gris-medio);
     }
 
     .cuando-fecha {
@@ -1737,8 +1945,10 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     .cuando-final {
         font-size: clamp(0.9rem, 3vw, 1.1rem);
         font-weight: 900;
-        -webkit-text-stroke: 0.3px var(--color-gris-medio);
-        text-shadow: 0 0 0.5px var(--color-gris-medio);
+    }
+
+    .cuando-section .section-title .mobile-break {
+        display: inline;
     }
 
     /* Nosotros Section Mobile */
