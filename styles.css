@@ -47,8 +47,9 @@
     --color-text-light: #707070;      /* Gris medio - Texto secundario */
     --color-background: #FEF7F1;      /* Crema - Fondo general */
 
-    /* Imagen de fondo */
+    /* Imágenes de fondo */
     --background-image: url('fondo-hojas.jpg');
+    --section-background-image: url('fondo_recuadro.png');
 
 /* Importar Google Fonts para mejor legibilidad */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
@@ -435,7 +436,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('fondo_recuadro.png');
+    background-image: var(--section-background-image);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -643,7 +644,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('fondo_recuadro.png');
+    background-image: var(--section-background-image);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -754,7 +755,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('fondo_recuadro.png');
+    background-image: var(--section-background-image);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -892,7 +893,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('fondo_recuadro.png');
+    background-image: var(--section-background-image);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1004,7 +1005,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('fondo_recuadro.png');
+    background-image: var(--section-background-image);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1131,7 +1132,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('fondo_recuadro.png');
+    background-image: var(--section-background-image);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1289,7 +1290,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('fondo_recuadro.png');
+    background-image: var(--section-background-image);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1378,7 +1379,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('fondo_recuadro.png');
+    background-image: var(--section-background-image);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1415,7 +1416,7 @@ section:nth-child(even):not(.hero-section):not(.foto-principal-section) {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('fondo_recuadro.png');
+    background-image: var(--section-background-image);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

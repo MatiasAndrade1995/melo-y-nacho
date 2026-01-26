@@ -43,6 +43,7 @@ const weddingConfig = {
     // Imágenes (cambia los nombres de archivos según necesites)
     mainPhoto: "fotos/FOTO_PRINCIPAL.jpg",
     backgroundImage: "fondo-hojas.jpg",
+    sectionBackground: "fondo_recuadro.png", // Fondo decorativo de los recuadros internos
     carouselPhotos: [
         "fotos/1.jpg",
         "fotos/2.jpg",
@@ -203,6 +204,11 @@ function applyConfig() {
 
     // Cambiar la variable CSS para el fondo
     document.documentElement.style.setProperty('--background-image', `url('${weddingConfig.backgroundImage}')`);
+
+    // Cambiar el fondo de los recuadros internos
+    if (weddingConfig.sectionBackground) {
+        document.documentElement.style.setProperty('--section-background-image', `url('${weddingConfig.sectionBackground}')`);
+    }
 
     // Colores personalizables
     if (weddingConfig.colors) {
