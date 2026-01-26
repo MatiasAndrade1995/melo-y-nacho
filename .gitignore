@@ -27,6 +27,3 @@ VERCEL_CONFIG.md
 # Archivos temporales
 *.tmp
 *.temp
-
-# Imágenes no utilizadas
-fondo-hojas-recuadros.png
