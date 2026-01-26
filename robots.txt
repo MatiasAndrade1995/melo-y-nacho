@@ -1,0 +1,10 @@
+# robots.txt para Melo & Nacho - Casamiento
+User-agent: *
+Allow: /
+
+# Archivos y directorios que no queremos indexar
+Disallow: /musica/
+Disallow: /*.mp3$
+
+# Sitemap (opcional - crear si necesitas mejor SEO)
+# Sitemap: https://tudominio.com/sitemap.xml
