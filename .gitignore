@@ -27,3 +27,12 @@ VERCEL_CONFIG.md
 # Archivos temporales
 *.tmp
 *.temp
+
+# Node modules y package-lock
+node_modules/
+package-lock.json
+
+# Backups y archivos de optimización
+fotos_originales_backup/
+fotos_optimizadas_temp/
+optimize-images.js
