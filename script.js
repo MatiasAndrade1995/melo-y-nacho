@@ -3,7 +3,7 @@ let countdownInterval = null;
 let isCountdownVisible = false;
 
 function updateCountdown() {
-    const weddingDate = new Date('2026-04-11T16:00:00').getTime();
+    const weddingDate = new Date('2026-04-11T16:30:00').getTime();
     const now = new Date().getTime();
     const distance = weddingDate - now;
 
